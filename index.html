@@ -1,0 +1,509 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Welcome to Imelda Seventh-day Adventist Church. Growing in Faith. Serving in Love. Sharing the Hope.">
+  <title>Imelda Seventh-day Adventist Church</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #142b45;
+      --navy-dark: #0c1d30;
+      --gold: #c9a96e;
+      --cream: #f8f6f1;
+      --text: #263342;
+      --muted: #687585;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .topbar {
+      background: var(--navy-dark);
+      color: #e9e3d7;
+      text-align: center;
+      padding: 8px 16px;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    header {
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 15px rgba(0,0,0,.06);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-family: "Playfair Display", serif;
+      font-size: 23px;
+    }
+
+    .brand-name {
+      color: var(--navy);
+      font-weight: 700;
+      line-height: 1.25;
+      font-size: 14px;
+    }
+
+    .brand-name small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      font-weight: 500;
+      margin-top: 3px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    nav a:hover { color: #a47d3e; }
+
+    .nav-button {
+      background: var(--navy);
+      color: white;
+      padding: 11px 19px;
+      border-radius: 3px;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: none;
+      color: var(--navy);
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 610px;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(8,24,40,.88), rgba(8,24,40,.48)),
+        url("https://images.unsplash.com/photo-1439853949127-fa647821eba0?auto=format&fit=crop&w=2000&q=85")
+        center/cover no-repeat;
+    }
+
+    .hero-content {
+      width: 1180px;
+      max-width: 100%;
+      padding: 100px 24px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: #e3c58e;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.12;
+      max-width: 750px;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      max-width: 590px;
+      color: #e7eaf0;
+      margin-bottom: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 24px;
+      background: var(--gold);
+      color: #17283b;
+      font-weight: 700;
+      font-size: 13px;
+      border-radius: 3px;
+      transition: .2s;
+    }
+
+    .button:hover { background: #e0c28d; }
+
+    section { padding: 85px 24px; }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 45px;
+    }
+
+    .section-heading .eyebrow { color: #a47d3e; }
+
+    h2 {
+      color: var(--navy);
+      font-size: clamp(32px, 4vw, 43px);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p { color: var(--muted); }
+
+    .welcome-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .welcome-image {
+      min-height: 370px;
+      background:
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85")
+        center/cover;
+      border-radius: 4px;
+    }
+
+    .welcome-copy p {
+      color: var(--muted);
+      margin: 15px 0 25px;
+    }
+
+    .schedule-section { background: var(--cream); }
+
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .schedule-card {
+      background: white;
+      padding: 27px;
+      border: 1px solid #eee9df;
+      border-top: 3px solid var(--gold);
+    }
+
+    .schedule-card h3 {
+      font-size: 20px;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .schedule-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .schedule-card strong {
+      display: block;
+      color: #a47d3e;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    .mission {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+    }
+
+    .mission h2 { color: white; }
+
+    .mission p {
+      max-width: 700px;
+      margin: auto;
+      color: #d8e0e8;
+    }
+
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+    }
+
+    .visit-grid h3 {
+      color: var(--navy);
+      font-size: 23px;
+      margin-bottom: 12px;
+    }
+
+    .visit-grid p { color: var(--muted); }
+
+    footer {
+      background: var(--navy-dark);
+      color: #d6dde5;
+      text-align: center;
+      padding: 35px 20px;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: white;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 800px) {
+      .menu-toggle { display: block; }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 25px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+        box-shadow: 0 10px 15px rgba(0,0,0,.08);
+      }
+
+      nav.open { display: flex; }
+      .welcome-grid, .visit-grid { grid-template-columns: 1fr; }
+      .schedule-grid { grid-template-columns: 1fr 1fr; }
+      .hero { min-height: 540px; }
+    }
+
+    @media (max-width: 520px) {
+      .schedule-grid { grid-template-columns: 1fr; }
+      section { padding: 65px 20px; }
+      .hero-content { padding: 75px 22px; }
+      .brand-name { font-size: 12px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    IMELDA SEVENTH-DAY ADVENTIST CHURCH · CALOOCAN CITY
+  </div>
+
+  <header>
+    <div class="nav">
+      <a class="brand" href="#">
+        <div class="brand-mark">I</div>
+        <div class="brand-name">
+          IMELDA SEVENTH-DAY
+          <small>ADVENTIST CHURCH</small>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+
+      <nav id="mainNav">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#worship">Worship</a>
+        <a href="#ministries">Ministries</a>
+        <a href="#visit">Contact</a>
+        <a class="nav-button" href="#visit">Plan Your Visit</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Welcome to Imelda Adventist Church</div>
+        <h1>Growing in Faith.<br>Serving in Love.</h1>
+        <p>
+          A church family united by faith, strengthened by God's Word,
+          and committed to sharing the hope of Jesus Christ.
+        </p>
+        <a href="#visit" class="button">JOIN US THIS SABBATH</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container welcome-grid">
+        <div class="welcome-image" role="img" aria-label="Peaceful natural landscape"></div>
+        <div class="welcome-copy">
+          <div class="eyebrow">A place to belong</div>
+          <h2>Welcome to Our Church Family</h2>
+          <p>
+            We are a community of believers seeking to know Jesus,
+            grow together in faith, and serve our neighbors with love.
+          </p>
+          <p>
+            Whether you are visiting for the first time or looking
+            for a church family, you are warmly welcome here.
+          </p>
+          <a href="#visit" class="button">COME WORSHIP WITH US</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="schedule-section" id="worship">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Worship and fellowship</div>
+          <h2>Join Us in Worship</h2>
+          <p>There is a place for you and your family in our weekly gatherings.</p>
+        </div>
+
+        <div class="schedule-grid">
+          <article class="schedule-card">
+            <h3>Midweek Prayer</h3>
+            <p>Wednesday</p>
+            <strong>7:30 PM – 8:30 PM</strong>
+          </article>
+
+          <article class="schedule-card">
+            <h3>Friday Vesper</h3>
+            <p>Friday</p>
+            <strong>7:30 PM – 8:30 PM</strong>
+          </article>
+
+          <article class="schedule-card">
+            <h3>Family Time</h3>
+            <p>Sabbath Saturday</p>
+            <strong>8:15 AM</strong>
+          </article>
+
+          <article class="schedule-card">
+            <h3>Sabbath School</h3>
+            <p>Bible study and fellowship</p>
+            <strong>8:30 AM</strong>
+          </article>
+
+          <article class="schedule-card">
+            <h3>Divine Worship</h3>
+            <p>Sabbath Saturday</p>
+            <strong>10:30 AM</strong>
+          </article>
+
+          <article class="schedule-card">
+            <h3>Afternoon Worship</h3>
+            <p>Sabbath Saturday</p>
+            <strong>2:30 PM</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission" id="ministries">
+      <div class="container">
+        <div class="eyebrow">Our purpose and mission</div>
+        <h2>Sharing the Hope of Jesus</h2>
+        <p>
+          Through worship, Bible study, fellowship, and community service,
+          we seek to reflect Christ's love and share the everlasting gospel.
+          Together, we grow in faith and advance His mission.
+        </p>
+      </div>
+    </section>
+
+    <section id="visit">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">You are welcome here</div>
+          <h2>Plan Your Visit</h2>
+          <p>We look forward to worshiping with you.</p>
+        </div>
+
+        <div class="visit-grid">
+          <div>
+            <h3>Find Our Church</h3>
+            <p>
+              Imelda Seventh-day Adventist Church<br>
+              East Bagong Barrio, Caloocan City, Philippines
+            </p>
+          </div>
+          <div>
+            <h3>Stay Connected</h3>
+            <p>
+              Follow our church announcements, worship programs,
+              and community activities through our official channels.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Imelda Seventh-day Adventist Church</strong>
+    Growing in Faith. Serving in Love. Sharing the Hope.
+    <p>© <span id="year"></span> Imelda Seventh-day Adventist Church. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("menuToggle").addEventListener("click", () => {
+      document.getElementById("mainNav").classList.toggle("open");
+    });
+
+    document.querySelectorAll("#mainNav a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("mainNav").classList.remove("open");
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
